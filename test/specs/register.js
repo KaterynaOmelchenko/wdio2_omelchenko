@@ -1,6 +1,8 @@
 const { expect } = require('chai');
-const email = Math.random()+'kakak@gmail.com';
+const email = Math.random().toFixed(4)+'kakak@gmail.com';
 const firstName = 'John';
+const lastName = 'Smith';
+const password = 'password';
 
 describe('Register page', () => {
 
@@ -37,7 +39,7 @@ describe('Register page', () => {
 
     it( 'should fill up last name field', () => {
         const element = $('form input[name="lastName"]');
-        element.setValue('Smith');
+        element.setValue(lastName);
     });
 
     it( 'should fill up phone num field', () => {
@@ -54,7 +56,7 @@ describe('Register page', () => {
 
     it( 'should fill up password field', () => {
         const element = $('form input[name="password"]');
-        element.setValue('abrakadabra');
+        element.setValue(password);
     });
 
     it( 'should fill up about field', () => {
@@ -75,14 +77,44 @@ describe('Register page', () => {
     it( 'should choose click button', () => {
         const element = $('form button[type="submit"]');
         element.click();
-        browser.pause(2000);
+
     });
 
+  /*  */
+    it('should have the right title after geristrarion', () => {
+        const actualTitle = browser.getTitle();
+        const expectedTitle = 'Progress Monitor';
+        expect(actualTitle).equal(expectedTitle);
+        browser.pause(5000);
+    });
+    it( 'should has a correct new title', () => {
+        const actual = $('h1').getText();
+        const expected = 'User Login';
+        expect(actual).equal(expected);
+        browser.pause(2000);
+    });
+    it( 'should fill up email field', () => {
+        const element = $('form input[name="email"]');
+        element.setValue(email);
+        browser.pause(1000);
+    });
 
-    //login title
-    //email passw
-    //log in button
-    //wait
-    // title first name+last name
+    it( 'should fill up password field', () => {
+        const element = $('form input[name="password"]');
+        element.setValue(password);
+        browser.pause(1000);
+    });
+
+    it( 'should choose click button', () => {
+        const element = $('form button[type="submit"]');
+        element.click();
+        browser.pause(1000);
+    });
+
+    it( 'should has a correct title with User Name', () => {
+        const actual = $('h1').getText();
+        const expected = 'You are a new user';
+        expect(actual).equal(expected);
+    });
 
 });
