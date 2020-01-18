@@ -1,15 +1,32 @@
 const { expect } = require('chai');
+
 const email = Math.random().toFixed(4)+'kakak@gmail.com';
 const firstName = 'John';
 const lastName = 'Smith';
 const password = 'password';
+const phoneNumber = '14259195668';
+const URL = 'https://stage.pasv.us/user/register';
+
+const user = {
+     email : Math.random().toFixed(4)+'kakak@gmail.com',
+     firstName: 'John',
+     lastName: 'Smith',
+     password: 'password',
+    phoneNumber: '14259195668',
+    about: 'hdfkdfjldlkfj djdfsdfjdfkj kdfjdkfdj'
+}
+
+const page = {
+    URL: 'https://stage.pasv.us/user/register',
+    title: 'Progress Monitor'
+}
 
 describe('Register page', () => {
 
     it('should have the right title', () => {
-        browser.url('https://stage.pasv.us/user/register');
+        browser.url(page.URL);
         const actualTitle = browser.getTitle();
-        const expectedTitle = 'Progress Monitor';
+        const expectedTitle = page.title;
         expect(actualTitle).equal(expectedTitle);
     });
 
@@ -34,34 +51,34 @@ describe('Register page', () => {
 
     it( 'should fill up first name field', () => {
         const element = $('form input[name="firstName"]');
-        element.setValue(firstName);
+        element.setValue(user.firstName);
     });
 
     it( 'should fill up last name field', () => {
         const element = $('form input[name="lastName"]');
-        element.setValue(lastName);
+        element.setValue(user.lastName);
     });
 
     it( 'should fill up phone num field', () => {
         const element = $('form input[name="phone"]');
-        element.setValue('14259195668');
+        element.setValue(user.phoneNumber);
 
     });
 
     it( 'should fill up email field', () => {
         const element = $('form input[name="email"]');
-        element.setValue(email);
+        element.setValue(user.email);
     });
 
 
     it( 'should fill up password field', () => {
         const element = $('form input[name="password"]');
-        element.setValue(password);
+        element.setValue(user.password);
     });
 
     it( 'should fill up about field', () => {
         const element = $('form textarea[name="about"]');
-        element.setValue('hdfkdfjldlkfj djdfsdfjdfkj kdfjdkfdj');
+        element.setValue(user.about);
     });
 
     it( 'should fill up goals field', () => {
