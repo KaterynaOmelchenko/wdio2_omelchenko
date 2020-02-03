@@ -45,6 +45,7 @@ describe('FLASH GROUP CREATE', () => {
     it('should submit form ', () => {
         const el = browser.$('//div[contains(@class, "sidepanel")]//input[@name="name"]');
         el.setValue('My group description 123...');
+        browser.pause(300);
     });
 
     it('should submit form', ()=>{
