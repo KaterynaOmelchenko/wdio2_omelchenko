@@ -15,6 +15,16 @@ describe('PROFILE', () => {
        expect(actual).eq(expected);
     });
 
+    it('should check site name', () => {
+        const actual = ProfilePage.siteName.getText();
+        const expected = 'Progress Monitor';
+        expect(actual).eq(expected);
+    });
+
+    it('should check that pop up message appears', () => {
+        const actual = ProfilePage.popUpNotification.getText();
+        expect(actual).to.exist;
+    });
 
 
 });
