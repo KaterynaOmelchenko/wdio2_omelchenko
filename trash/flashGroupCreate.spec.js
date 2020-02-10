@@ -1,9 +1,14 @@
-const { expect } = require('chai');
+//const { expect } = require('chai');
+// const { URL_LOGIN } = require('../../trash/register_data');
+
+import { expect } from 'chai';
+import { URL_LOGIN } from './register_data';
 
 describe('FLASH GROUP CREATE', () => {
     before('Login as admin', () => {
 
-        browser.url('https://stage.pasv.us/user/login');
+        //browser.url('https://stage.pasv.us/user/login');
+        browser.url(URL_LOGIN);
         $('form input[name="email"]').setValue('usa.alika@gmail.com');
         $('form input[name="password"]').setValue('1234567');
         $('form button[type="submit"]').click();
@@ -31,13 +36,12 @@ describe('FLASH GROUP CREATE', () => {
     });
 
     it('should check if modal form title is correct', () => {
-        const el = browser.$('//div[contains(@class, "sidepanel")]//*[@class-modal-title"]');
-        const actual = el.getText();
+        const actual = browser.$('//div[contains(@class,"sidepanel")]//*[@class="modal-title"]').getText();
         const expected = 'Create Flash Group';
         expect(actual).eq(expected);
     });
 
-    it('should fill up group name field ', () => {
+    it('should fill up Group name field ', () => {
         const el = browser.$('//div[contains(@class, "sidepanel")]//input[@name="name"]');
         el.setValue('My group description 123...');
     });
@@ -53,6 +57,8 @@ describe('FLASH GROUP CREATE', () => {
         el.click();
         browser.pause(500);
     })
+
+    /*
 
     it('should first item in the list be equal created group title', () => {
         const actual = browser.$('//div[@qa="flash-group-list"]//h4/a').getText();
@@ -76,7 +82,6 @@ describe('FLASH GROUP CREATE', () => {
         expect(actual).eq(expected);
 
     });
-
-
+*/
 });
 

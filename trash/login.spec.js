@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 
-const Page = require('./Page');
+const Page = require('../test/specs/Page');
 
 describe('LOGIN', () => {
     it('should ', () => {

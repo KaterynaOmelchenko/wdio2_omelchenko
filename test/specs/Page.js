@@ -1,10 +1,10 @@
-class Page {
+export default class Page {
     constructor() {
         this.title = 'My Page';
     }
 
     open(path){
-        browser.url(path)
+        browser.url(path);
     }
 }
-module.exports = new Page();
+//module.exports = new Page();

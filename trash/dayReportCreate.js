@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { URL_LOGIN } = require('./register_data');
+const { URL_LOGIN } = require('./register');
 
 describe('CREATE DAY REPORT', () => {
     before('Login as admin', () => {

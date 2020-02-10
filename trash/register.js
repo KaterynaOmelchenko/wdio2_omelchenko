@@ -1,5 +1,5 @@
-//const { expect } = require('chai');
-const { expect } = require('mocha');
+const { expect } = require('chai');
+//const { expect } = require('mocha');
 
 
 const email = Math.random().toFixed(4)+'kakak@gmail.com';
@@ -23,7 +23,7 @@ const page = {
     title: 'Progress Monitor'
 }
 
-describe('Register page', () => {
+describe('Register new user page', () => {
 
     it('should have the right title', () => {
         browser.url(page.URL);
@@ -129,11 +129,11 @@ describe('Register page', () => {
         element.click();
         browser.pause(1000);
     });
-
+/*
     it( 'should has a correct title with User Name', () => {
         const actual = $('h1').getText();
         const expected = 'You are a new user';
         expect(actual).equal(expected);
     });
-
+*/
 });
