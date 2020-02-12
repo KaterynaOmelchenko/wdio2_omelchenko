@@ -13,6 +13,7 @@ class ProfilePage extends Page{
     get popUpNotification(){
         return $('//h4[@class="notification-title"]');
     }
+
 }
 
 
