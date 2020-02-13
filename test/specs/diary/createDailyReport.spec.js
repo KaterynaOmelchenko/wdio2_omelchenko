@@ -3,7 +3,7 @@ import LoginPage from '../login/LoginPage';
 import ProfilePage from '../profile/ProfilePage';
 import DiaryPage from '../diary/DiaryPage';
 
-describe('DIARY', () => {
+describe('DIARY PAGE', () => {
 
    before( () => {
         LoginPage.login();
